@@ -145,20 +145,21 @@
       <p><strong>App names:</strong> Naviko, also known as &#27599;&#31508;&#35760;</p>
       <p><strong>Developer:</strong> YI WU</p>
       <p><strong>Privacy contact:</strong> <a href="mailto:yinhekuaidi@gmail.com">yinhekuaidi@gmail.com</a></p>
-      <p><strong>Last updated:</strong> May 25, 2026</p>
+      <p><strong>Last updated:</strong> June 10, 2026</p>
     </header>
 
     <section class="summary" aria-labelledby="summary">
       <h2 id="summary">Summary</h2>
       <p>
         Naviko is a personal finance and bookkeeping app. Most bookkeeping data is stored locally on your device.
-        Certain optional features, such as AI recognition and Google Drive sync, require data to be sent outside your device
-        only when you choose to use those features.
+        Certain optional features, such as AI recognition, Premium benefits, AI credits, Google Play purchase verification,
+        and Google Drive sync, require data to be sent outside your device only when needed to provide those features.
       </p>
       <p>
-        Naviko does not sell your personal data, does not show advertising, and the current inspected Android build does not
-        include Firebase, AdMob, Google Analytics, Crashlytics, Google Play Billing, or similar analytics, advertising, crash
-        reporting, or in-app purchase SDKs.
+        Naviko does not sell your personal data and does not show advertising. The current inspected Android build uses
+        Google Play Billing for optional Premium purchases and Google Play services for purchase, authorization, and security
+        related features. It does not include Firebase, AdMob, Google Analytics, Crashlytics, advertising SDKs, or similar
+        analytics, advertising, or crash reporting SDKs.
       </p>
     </section>
 
@@ -184,7 +185,8 @@
       <h2 id="scope">1. Scope</h2>
       <p>
         This Privacy Policy explains how YI WU handles data in connection with Naviko. It applies to the Android app and
-        related app services used by Naviko, including AI processing and Google Drive sync features when enabled by you.
+        related app services used by Naviko, including AI processing, Premium benefits, AI credits, purchase verification,
+        redemption code processing, and Google Drive sync features when enabled or used by you.
       </p>
       <p>
         This policy is intended to describe the app's current privacy practices for Google Play closed testing and later
@@ -230,11 +232,34 @@
         timestamps, recent sync file names, backup package files, and related sync settings.
       </p>
 
+      <h3>Premium, purchase, anonymous identity, AI credit, and redemption data</h3>
+      <p>
+        Naviko does not currently provide app account creation. To support Premium benefits, AI credits, purchase recovery,
+        and redemption codes without an app account, Naviko may process:
+      </p>
+      <ul>
+        <li>An app-generated installation identifier, anonymous subject identifier, anonymous access token, entitlement status, and related timestamps.</li>
+        <li>Google Play purchase data needed to verify a Premium purchase or restore, including product ID, purchase token, order ID, purchase state, acknowledgement status, and verification trigger.</li>
+        <li>Premium status, restore-required status, periodic purchase check status, and local grace-period status.</li>
+        <li>AI credit wallet data, free trial status, credit balance, credit grants, credit consumption, refund or expiration records, request IDs, and feature types.</li>
+        <li>Redemption code requests, masked or normalized redemption code data where applicable, redemption result, cooldown status, and redemption history.</li>
+      </ul>
+
       <h3>Technical data</h3>
       <p>
-        For AI and sync requests, Naviko or its service providers may process technical request data such as platform
-        information, app version, locale, file hashes, request timing, network diagnostics, and error information needed to
-        provide, secure, debug, and improve the service.
+        For AI, Premium, AI credit, redemption, sync, and service requests, Naviko or its service providers may process
+        technical request data such as platform, package name, app version, app version code, install channel, language,
+        region, locale, file hashes, media metadata, request IDs, request timing, network diagnostics, error information,
+        Google Play services availability, and security or risk-control signals.
+      </p>
+      <p>
+        Risk-control signals may include a virtual device risk result derived from Android build fields such as device model,
+        manufacturer, brand, device, product, hardware, and fingerprint. Naviko may also use Google Play Integrity signals if
+        enabled in a future release. Naviko does not collect Advertising ID, IMEI, IMSI, SIM serial number, device serial
+        number, MAC address, phone number, contacts, or precise or coarse location for Premium, AI credit, or redemption
+        risk control.
+        Server infrastructure may receive IP addresses as part of normal network operation and may store hashed or limited IP
+        information for security, abuse prevention, rate limiting, and troubleshooting.
       </p>
     </section>
 
@@ -242,8 +267,9 @@
       <h2 id="permissions">3. Permissions</h2>
       <ul>
         <li>
-          <strong>Internet:</strong> Used for AI processing and Google Drive sync. Core local bookkeeping can operate without
-          sending records to Naviko unless you use online features.
+          <strong>Internet:</strong> Used for AI processing, Premium entitlement checks, Google Play purchase verification,
+          AI credit and redemption code services, Google Drive sync, and service security. Core local bookkeeping can operate
+          without sending records to Naviko unless you use online features.
         </li>
         <li>
           <strong>Photos and images:</strong> Used when you select images, add attachments, use receipt recognition, configure
@@ -262,6 +288,11 @@
           <strong>File and document access:</strong> Used when you import data, export data, save backups, restore backups, or
           add record attachments through Android system file pickers.
         </li>
+        <li>
+          <strong>Google Play Billing and Google Play services:</strong> Used for optional Premium purchases, purchase
+          restoration, periodic purchase ownership checks, Google Drive authorization, Google Play services availability
+          checks, and related security or risk-control features.
+        </li>
       </ul>
     </section>
 
@@ -273,7 +304,10 @@
         <li>Providing AI recognition, AI assistant parsing, image recognition, and voice transcription when you use AI features.</li>
         <li>Supporting app lock, local database protection, biometric unlock, and privacy display controls.</li>
         <li>Providing Google Drive sync and local backup features that you choose to use.</li>
-        <li>Preventing duplicate AI entries, preserving app state, managing settings, and troubleshooting app or service errors.</li>
+        <li>Processing optional Premium purchases, restoring Premium benefits, checking current Google Play purchase ownership, and maintaining Premium entitlement status.</li>
+        <li>Managing AI free trials, AI credits, credit consumption, redemption codes, credit history, and insufficient-credit notices.</li>
+        <li>Preventing duplicate AI entries, duplicate purchase grants, duplicate credit grants, abuse, fraud, unauthorized redemption, and excessive requests.</li>
+        <li>Preserving app state, managing settings, rate limiting, service security, and troubleshooting app or service errors.</li>
         <li>Complying with applicable law and protecting users, the app, and services from misuse or security issues.</li>
       </ul>
     </section>
@@ -285,11 +319,35 @@
         When you use AI recognition, AI assistant image parsing, text parsing, command parsing, or voice transcription, the
         content needed for that feature may be sent through Naviko's AI service path and processed by third-party AI service
         providers. This may include text you enter, selected images, audio recordings, file hashes, MIME types, duration,
-        app version, platform, locale, and limited recent AI context.
+        app version, platform, locale, anonymous subject ID, installation ID, request ID, AI credit context, risk-control
+        signals, and limited recent AI context.
       </p>
       <p>
         AI processing is used to provide the requested AI bookkeeping feature. You should not submit information to AI
         features unless you are comfortable having that information processed for recognition or transcription.
+      </p>
+
+      <h3>Naviko app services</h3>
+      <p>
+        Naviko may send data to Naviko-operated or Naviko-controlled backend services to provide AI processing, Premium
+        entitlement management, AI credits, redemption codes, risk control, rate limiting, service logs, and troubleshooting.
+        These services may process anonymous subject identifiers, installation identifiers, anonymous access tokens, request
+        IDs, purchase verification results, AI credit records, redemption records, technical client data, risk-control
+        signals, and limited service logs.
+      </p>
+
+      <h3>Google Play and payments</h3>
+      <p>
+        If you choose to buy or restore Naviko Premium, the purchase is handled by Google Play Billing. Google may process
+        payment information according to Google's own terms and privacy practices. Naviko does not receive your credit card
+        number, debit card number, bank account number, or full Google payment method details.
+      </p>
+      <p>
+        Naviko may receive and send Google Play purchase data, including product ID, purchase token, order ID, purchase state,
+        and acknowledgement status, to Naviko services and the Google Play Developer API to verify purchases, restore Premium
+        benefits, prevent duplicate grants, process refunds or revocations where applicable, and perform periodic ownership
+        checks. Premium ownership may be checked periodically, including approximately every 7 days, to confirm that the
+        current Google Play account still owns the one-time Premium product.
       </p>
 
       <h3>Google Drive</h3>
@@ -334,12 +392,18 @@
       <p>
         Network requests for AI and Google Drive are sent over HTTPS where supported by the service endpoint. No method of
         transmission or storage is perfectly secure, but we use reasonable technical and organizational safeguards appropriate
-        for the app's current closed testing stage.
+        for the app's current release stage.
       </p>
       <p>
         Backups and exports are important security boundaries. Encrypted backup packages use app-supported encryption.
         Unencrypted exports, unencrypted backups, and unencrypted Google Drive or local sync files remain readable wherever
         you save or upload them. You are responsible for protecting files you export or store outside the app.
+      </p>
+      <p>
+        Purchase tokens, anonymous access tokens, service account credentials, and security keys are treated as sensitive
+        operational data. Naviko is designed to avoid storing Google Play purchase tokens in plaintext where server-side
+        records only need a hash or verification result. Administrative systems should not display raw secrets or payment
+        credentials.
       </p>
     </section>
 
@@ -353,12 +417,16 @@
         <li>Soft-deleted bookkeeping records may remain in the recycle bin and are designed to be automatically cleaned after up to 60 days.</li>
         <li>AI batch recognition history is retained for recent history according to current app behavior, including cleanup of older batch history.</li>
         <li>AI assistant messages, attachments, cards, and related local records remain according to your app settings and in-app deletion actions.</li>
+        <li>Premium entitlement, anonymous identity, AI credit wallet, redemption, purchase verification, and risk-control records may be retained by Naviko services for as long as needed to provide Premium benefits, restore purchases, maintain credit balances, prevent duplicate grants, prevent abuse, resolve disputes, comply with legal obligations, and maintain service integrity.</li>
+        <li>Purchase verification records may include hashed purchase tokens, product IDs, order IDs, verification status, acknowledgement status, timestamps, anonymous subject IDs, installation IDs, and limited client or risk summaries.</li>
+        <li>Service logs may be retained for security, rate limiting, troubleshooting, cost control, and abuse prevention. Logs are designed to avoid storing full bookkeeping content unless needed to provide the feature you requested or investigate a service issue.</li>
         <li>Google Drive backups, local backup files, exported files, and shared attachments remain wherever you saved or uploaded them until you delete them there.</li>
         <li>If you use Google Drive sync, revoking authorization stops future access but does not automatically delete backup files already stored in your Drive.</li>
       </ul>
       <p>
-        Naviko currently does not provide app account creation. Therefore, there is no Naviko app account to delete. You can
-        request help with privacy or deletion questions by contacting us at the address below.
+        Naviko currently does not provide app account creation. Therefore, there is no Naviko app account to delete. The
+        anonymous identity used for Premium benefits and AI credits is not a user-facing login account. You can request help
+        with privacy or deletion questions by contacting us at the address below.
       </p>
     </section>
 
@@ -370,6 +438,9 @@
         <li>Clear or restore items from the recycle bin where supported.</li>
         <li>Remove attachments from records and delete exported files or backups from the locations where you saved them.</li>
         <li>Disable AI options such as startup screenshot detection or automatic image attachment saving where available.</li>
+        <li>Choose not to use AI features, Premium purchases, redemption codes, or Google Drive sync if you do not want the data needed for those features to be sent outside your device.</li>
+        <li>Restore purchases through Google Play where supported, or manage purchase history, refunds, and payment methods through Google Play and your Google account.</li>
+        <li>Contact us to request review or deletion assistance for Naviko service-side anonymous identity, entitlement, AI credit, redemption, or service log records where legally and technically feasible.</li>
         <li>Decline or revoke Android permissions through system settings. Some features may stop working without their required permissions.</li>
         <li>Revoke Google Drive authorization in the app where available or through your Google account settings.</li>
         <li>Clear app storage or uninstall the app to remove local app data from the device, subject to Android backup behavior and any exported files or cloud backups you created.</li>
