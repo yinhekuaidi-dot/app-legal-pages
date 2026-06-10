@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Naviko</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --text: #172033;
+      --muted: #5f6b7a;
+      --line: #dfe5ee;
+      --accent: #1769aa;
+      --accent-soft: #e7f1fb;
+      --warning: #8a5b00;
+      --warning-bg: #fff7df;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    main {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 56px;
+    }
+
+    header,
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.25;
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      letter-spacing: 0;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 20px;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .meta,
+    .small {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .summary {
+      background: var(--accent-soft);
+      border-color: #b8d6ee;
+    }
+
+    .notice {
+      background: var(--warning-bg);
+      border-color: #f2d991;
+      color: var(--warning);
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 8px 16px;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    code {
+      background: #eef2f7;
+      border-radius: 4px;
+      padding: 1px 5px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.95em;
+    }
+
+    @media (max-width: 640px) {
+      main {
+        width: min(100% - 20px, 960px);
+        padding: 16px 0 40px;
+      }
+
+      header,
+      section {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="meta">Application Home Page</p>
+      <h1>Naviko</h1>
+      <p><strong>App names:</strong> Naviko, also known as &#27599;&#31508;&#35760;</p>
+      <p><strong>Developer:</strong> YI WU</p>
+      <p><strong>Contact:</strong> <a href="mailto:yinhekuaidi@gmail.com">yinhekuaidi@gmail.com</a></p>
+      <p><strong>Last updated:</strong> June 10, 2026</p>
+    </header>
+
+    <section class="summary" aria-labelledby="summary">
+      <h2 id="summary">About Naviko</h2>
+      <p>
+        Naviko is a personal finance and bookkeeping app for recording income and expenses, organizing ledgers, reviewing
+        spending patterns, and managing common personal finance workflows such as budgets, reimbursements, loans,
+        installments, subscriptions, scheduled bookkeeping, backup, and data sync.
+      </p>
+      <p>
+        The Android app is designed primarily around local storage. Most bookkeeping data remains on your device unless you
+        choose to use optional online features such as AI recognition, Premium benefits, AI credits, redemption codes,
+        Google Play purchase verification, or Google Drive sync.
+      </p>
+    </section>
+
+    <section aria-labelledby="links">
+      <h2 id="links">Important Links</h2>
+      <ul class="links">
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="mailto:yinhekuaidi@gmail.com">Contact Support</a></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="features">
+      <h2 id="features">Core Features</h2>
+      <ul>
+        <li>Manual bookkeeping for income and expense records.</li>
+        <li>Multiple ledgers, accounts, categories, counterparties, notes, attachments, recycle bin, import, and export.</li>
+        <li>Financial overview, trends, account statistics, ledger statistics, budget tracking, and insights.</li>
+        <li>Optional AI bookkeeping assistant for text, image, and supported recognition workflows.</li>
+        <li>Optional Google Drive sync that uploads app backup files only after you authorize Google Drive access.</li>
+        <li>Optional Premium features and AI credits managed through Google Play Billing and Naviko service-side checks.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="privacy">
+      <h2 id="privacy">Privacy and Data Handling</h2>
+      <p>
+        Naviko does not show advertising and does not sell personal data. The current inspected Android build does not
+        include Firebase, AdMob, Google Analytics, Crashlytics, advertising SDKs, or similar analytics, advertising, or
+        crash reporting SDKs.
+      </p>
+      <p>
+        Optional online features may send only the data needed to provide that feature. For example, AI features may send
+        content that you ask the app to recognize or process, Premium and AI credit features may send purchase or entitlement
+        related data, and Google Drive sync may use Google Sign-In and the Google Drive API.
+      </p>
+      <p>
+        For full details, read the <a href="privacy-policy.html">Privacy Policy</a>.
+      </p>
+    </section>
+
+    <section aria-labelledby="drive">
+      <h2 id="drive">Google Drive Sync</h2>
+      <p>
+        If you choose Google Drive sync, Naviko requests Google Drive <code>drive.file</code> access. This permission is used
+        to create or update backup files generated by Naviko in your Google Drive. Naviko does not use this permission to
+        browse, read, or manage unrelated files in your Drive.
+      </p>
+      <p>
+        You can revoke Google Drive authorization from within the app where available, through Android or Google account
+        settings, or by removing the app's access from your Google account.
+      </p>
+    </section>
+
+    <section aria-labelledby="premium">
+      <h2 id="premium">Premium, AI Credits, and Purchases</h2>
+      <p>
+        Naviko may offer optional Premium features, AI credits, and redemption-code features. Premium purchases are handled
+        through Google Play Billing. Naviko may verify purchase status and restore Premium benefits through Google Play and
+        related Naviko services.
+      </p>
+      <p>
+        AI credits and redemption codes are optional service features. Their availability, balance, expiration, and use may
+        depend on app version, service availability, fraud prevention, and applicable rules shown in the app.
+      </p>
+    </section>
+
+    <section class="notice" aria-labelledby="notice">
+      <h2 id="notice">Legal Notice</h2>
+      <p>
+        This page is provided for app store listing, OAuth branding, and user transparency. It summarizes the app's current
+        public-facing behavior and links to the applicable policy documents. It is not a substitute for the full Privacy
+        Policy or Terms of Service.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
